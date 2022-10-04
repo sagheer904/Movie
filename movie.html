@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+        }
+        
+        .main{
+            height: 70vh;
+            width: 101%;
+            /* border: 1px solid; */
+           position: relative;
+           box-shadow:  0px 0px 50px black;
+        }
+        .navbar{
+            height: 10vh;
+            width: 100%;
+            position: relative;
+            /* border: 1px solid; */
+            background: rgba(255, 255, 255, 0.404);
+           box-shadow:  0px 0px 50px rgba(0, 0, 0, 0.438);
+           transition: all 0.35s;
+
+
+        }
+        .borad{
+            height: 150vh;
+            width: 80%;
+            /* border: 1px solid; */
+            position: relative;
+            top: 80vh;
+            margin-left:20%;
+            border-radius: 5px;
+            background-image: url(https://www.movienewsnet.com/wp-content/uploads/2021/02/Wakanda-Black-Panther.jpg);
+            background-position: center;
+            background-size: cover;
+            /* filter: blur(2px); */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            justify-content: space-around;
+            box-sizing: border-box;
+
+            align-items: center;
+
+           
+            /* display: none; */
+        }
+        .img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            left: 5%;
+            position: absolute;
+            top: 5vh;
+
+
+
+        }
+        .name{
+            position: absolute;
+            left: 40%;
+            top: 10vh;
+            text-transform: capitalize;
+            font-family: 'Fira Sans Condensed', sans-serif;
+
+        }
+        .gender{
+            position: absolute;
+            left: 40%;
+            top: 20vh;
+            text-transform: capitalize;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        .phone{
+            position: absolute;
+            left: 40%;
+            top: 25vh;
+            text-transform: capitalize;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        .mail{
+            position: absolute;
+            left: 40%;
+            top: 30vh;
+            text-transform: capitalize;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        .add{
+            height: 20vh;
+            width: 40%;
+            position: absolute;
+            left: 80%;
+            top: 20vh;
+            box-shadow: 0 0 10px black;
+            border-radius: 10px;
+            background: white;
+            font-family: 'Fira Sans Condensed', sans-serif;
+
+        }
+        .addre{
+            position: absolute;
+            left: 10%;
+            top: 2vh;
+            font-size: 20px;
+            text-transform: capitalize;
+            font-family: 'Fira Sans Condensed', sans-serif;
+        }
+        .addre p{
+            font-size: 15px;
+            font-family: 'Fira Sans Condensed', sans-serif;
+        }
+        .pers{
+            position: absolute;
+            top: 40vh;
+            height: 6vh;
+            width: 15%;
+            border-radius:10px;
+            background: rgba(255, 255, 255, 0.356);
+            border: none;
+            left: 40%;
+            box-shadow: 0 0 20px #e37448;
+
+        }
+        .logo{
+            position: absolute;
+            left: 10%;
+            text-transform: capitalize;
+            font-family: 'Lobster', cursive;
+
+        }
+        .inp{
+            height: 5vh;
+            width: 20%;
+            left: 35%;
+            top: 2.5vh;
+            position: relative;
+            background-color: #dfdad775;
+            border: none;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        .search{
+            position: absolute;
+            left: 52%;
+            top: 2.5vh;
+            width: 3%;
+            height: 5vh;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        #user{
+            position: relative;
+            left: 65%;
+            top: 2vh;
+            /* border: 1px solid red; */
+            cursor: pointer;
+
+        }
+        #heart{
+            position: absolute;
+            left: 92%;
+            top: 2.5vh;
+
+        }
+        .dropdown{
+            height: 0;
+            width: 130px;
+            background: white;
+            top: 10vh;
+            /* border: 1px solid; */
+            position: absolute;
+            left: 85%;
+            z-index: 1;
+            overflow: scroll;
+            transition: all 0.35s;
+            /* display: none; */
+        }
+        .p{
+            font-size: 15px;
+            font-family: 'Fira Sans Condensed', sans-serif;
+            line-height: 20px;
+            cursor: pointer;
+            margin-left: 5px;
+
+        }
+        .active{
+            display: block;
+        }
+        .active2{
+            height: 60vh;
+            /* display: block; */
+
+        }
+        .slider{
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            overflow: hidden;
+            opacity: 0;
+            transition: 0.35s;
+        }
+        .pic1{
+            height: 150%;
+            width: 100%;
+            
+        }
+        .pic2{
+            height: 100%;
+            width: 100%;
+            
+        }
+        .pic3{
+            position: absolute;
+            top: -20%;
+            height: 150%;
+            width: 100%;
+            
+        }
+        .pic4{
+            position: absolute;
+            top: -20%;
+            height: 150%;
+            width: 100%;
+            
+        }
+        .active{
+           opacity: 1;
+        }
+        .child{
+            height: 32vh;
+            width: 15%;
+            /* border: 1px solid; */
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .child img{
+            height: 100%;
+            width: 100%;
+
+        }.overlay{
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.534);
+            position: absolute;
+            top: 100%;
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            /* justify-content:space-around; */
+            transition: all 0.35s;
+        }
+        .child:hover .overlay{
+            top: 0%;
+
+        }
+        .over_head{
+            text-align: center;
+            margin-top: 5vh;
+            color: white;
+            text-transform: uppercase;
+            font-family:cursive;
+            font-size: 1vmax;
+            
+            /* align-items:center; */
+
+        }
+        #star{
+            margin-left: 10%;
+        }
+        .fa-star{
+            color: white;
+        }
+        .fa-star-half-stroke{
+            color:white ;
+        }
+        .sidebar{
+            height: 150vh;
+            width: 20%;
+            /* border: 1px solid; */
+            position: absolute;
+            top: 80vh;
+            background: rgba(173, 173, 173, 0.253);
+            border-radius: 5px;
+        }
+        .option{
+            margin-left: 10%;
+            margin-top: 7vh;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+        .pera{
+            margin-left: 10%;
+            margin-top: 10vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: gray;
+        }
+        .fix{
+            position: fixed;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="slider active ">
+            <img class="pic1 " src="https://artfiles.alphacoders.com/801/80154.jpg" alt="">
+        </div>
+        <div class="slider">
+            <img class="pic2" src="https://www.wnypapers.com/content/images//110-Ent/Chaos-Walking-1.jpg" alt="">
+        </div>
+        <div class="slider ">
+            <img class="pic3" src="https://free4kwallpapers.com/uploads/originals/2015/11/21/edge-of-tomorrow-2014-movie-wallpaper.jpg" alt="">
+        </div>
+        <div class="slider ">
+            <img class="pic4" src="http://image.tmdb.org/t/p/original/guX1X6CS4mtaFiK3KFw25EhGanp.jpg" alt="">
+        </div>
+
+        <div class="navbar">
+            <h1 class="logo">Movies.site</h1>
+            <input type="text" class="inp" placeholder="Movie Name">
+            <!-- <input type="text" class="inp" placeholder="Last Name"> -->
+            <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            
+            <i class="fa-solid fa-heart" id="heart">
+            </i>
+            <i class="fa-solid fa-user" id="user">
+
+            </i>
+            <div class="dropdown"></div>
+
+
+        </div>
+        <div class="sidebar">
+            <h3 class="option">HINDI</h3>
+            <h3 class="option">ENGLISH</h3>
+            <h3 class="option">LATEST</h3>
+            <p class="pera">Find with JustWatch all the movies you can watch online on Netflix, iflix, Hooq and 4 other streaming providers.</br></br></br> Purchase, rent online & flat-rate.Watch Free Movies Online · </br></br>Free Online Movie Streaming Sites · </br></br>Thousands of Free Online Movies · </br></br>Free Movies on Streaming Websites ·</br></br> Keeping Free Movies Online.</p>
+        </div>
+       <div class="borad">
+       
+       </div>
+    <script>
+        const slider=document.querySelectorAll(".slider")
+        var inp=document.querySelector(".inp")
+        var btn=document.querySelector(".search")
+        var borad=document.querySelector(".borad")
+        var option=document.querySelectorAll(".option")
+        var nav=document.querySelector('.navbar')
+
+        console.log(borad);
+        var count=0
+        setInterval(() => {
+            count++
+           $(".slider").each(idx=>{
+            $(".slider").eq(idx).removeClass("active")
+           })
+            if(count>slider.length-1){
+                count=0
+            }
+            $(".slider").eq(count).addClass('active')
+        }, 3000)
+       $(".search").click(function(){
+        var val=$(".inp").val()
+        load(val)
+
+       })
+        function load(inpval) {
+            const imgUrl = "https://image.tmdb.org/t/p/w1280";
+        fetch(`https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${inpval}`)
+            .then(res=>res.json())
+            .then(data=>{
+            $(".borad").html("")
+        console.log(data.results);
+        $(data.results).each(item=>{
+                       $(".borad").append(` <div class="child">
+            <img src="${imgUrl}${$(data.results)[item].poster_path}" alt="">
+            <div class="overlay">
+                <h1 class="over_head">${$(data.results)[item].title}</h1>
+                <i class="fa-solid fa-star" id="star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+        `
+        )
+        })   
+            })    
+        }
+        option.forEach(opt=>{
+            opt.addEventListener("click",function(){
+                inp.value=opt.innerHTML
+                var inpval=inp.value
+                // var inpval=
+            load(inpval)
+            inp.value=""
+            })
+        })
+        window.addEventListener("scroll",function(){
+            if(window.scrollY>150){
+                nav.classList.add("fix")
+            }
+            else{
+                nav.classList.remove("fix")
+
+            }
+        })
+    </script>
+</body>
+</html>
